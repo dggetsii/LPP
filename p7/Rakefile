@@ -1,3 +1,13 @@
 re 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 task :default => :spec
+
+desc "Run Ruby"
+task :rps do
+  sh "ruby lib/fracciones.rb"
+end
+
+desc "Spec"
+task :spec do
+  sh "rspec -Ilib spec/fracciones_spec.rb" 
+end
